@@ -1,0 +1,156 @@
+.payment_page {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background-color: gainsboro;
+}
+
+.payment_page_card {
+    display: flex;
+    flex-direction: column;
+width: 50%;
+height: 50%;
+background-color: white;
+border-radius: 5px;
+}
+
+.payment_page_card_top {
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.payment_page_card_top span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+color: black;
+}
+
+.payment_page_card_center {
+border-radius: 30px;
+height: 300px;
+border: 1px solid gainsboro;
+
+}
+
+.payment_page_card_center_con {
+    height: 130px;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+border-bottom: 1px solid gainsboro;
+
+}
+.payment_page_card_center_con_period {
+height: 40px;
+display: flex;
+align-items: center;
+}
+
+.payment_page_card_center_con_period span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 30px;
+font-weight: bold;
+}
+
+.payment_page_card_center_con_month {
+
+}
+
+.payment_page_card_center_con_month span {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.payment_page_card_center_con_payment {
+
+}
+
+.payment_page_card_center_con_payment span {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    color: gray;
+}
+
+
+.payment_page_includes{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.payment_page_includes_card {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 5px;
+width: 100%;
+}
+
+.payment_page_includes_card_left{
+display: flex;
+align-items: center;
+width: 40%;
+justify-content: flex-end;
+padding-right: 10px;
+}
+
+.payment_page_includes_card_left span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+color: royalblue;
+}
+
+.payment_page_includes_card_right {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.payment_page_includes_card_right span {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+}
+
+
+.payment_page_card_bottom {
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment_page_card_bottom_payment {
+    background-color: royalblue;
+width: 150px;
+padding: 5px;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.payment_page_card_bottom_payment span {
+    color: white;
+}
+
+.payment_page_card_bottom_payment_btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+
+@media (max-width:700px) {
+
+    .payment_page_card {
+        width: 80%;
+    }
+
+    .payment_page_includes_card_left {
+        width: 25%;
+    }
+}

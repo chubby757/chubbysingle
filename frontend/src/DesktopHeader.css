@@ -1,0 +1,104 @@
+ .desktop_header {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    border-bottom: 1px solid gainsboro;
+    background-color: white;
+    width: 100%;
+ }
+  
+ .desktop_header_top {
+display: flex;
+align-items: center;
+width: 100%;
+ }
+
+ .desktop_header_top_left {
+    width: 25%; 
+    display: flex;
+    align-items: center;
+  
+ }
+
+ .desktop_header_top_left_menu {
+display: flex;
+align-items: center;
+ }
+
+ .btn {
+      color: red;
+      background-color: transparent;
+      border: none;
+ }
+
+ .btn:hover {
+   color: red;
+   background-color: transparent;
+   border: none;
+}
+
+ .desktop_header_top_left_logo {
+    display: flex;
+  align-items: center;
+ }
+
+ .desktop_header_top_left_logo_img {
+width:90%;
+height: 40px;
+ }
+
+ .desktop_header_top_center {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .desktop_header_top_right {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+ }
+
+ .desktop_header_top_right_upgrade_button {
+   width: 100px;
+   background-color: royalblue;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 10px;
+   border-radius: 5px;
+   padding: 5px;
+ }
+
+ .desktop_header_top_right_upgrade_button span {
+   color: white;
+   font-weight: bolder;
+ }
+
+.desktop_header_top_right_signin {
+display: flex;
+align-items: center;
+}
+
+.desktop_header_top_right_signin_left {
+color: black;
+}
+
+.desktop_header_top_right_signin_right {
+
+}
+
+.desktop_header_top_right_signin_right_signin {
+   font-size: 18px;
+   color: black;
+}
+
+
+.desktop_header_right_profile {
+   width: 40px;
+   height: 40px;
+   border-radius: 360px;
+}

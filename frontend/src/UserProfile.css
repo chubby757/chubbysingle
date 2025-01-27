@@ -1,0 +1,545 @@
+.user_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.user_profile_mobile {
+    display: none;
+}
+
+.user_profile_desktop {
+    width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.user_profile_desktop_con {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.user_profile_desktop_left {
+width: 50%;
+height: 600px;
+display: flex;
+justify-content: center;
+position: relative;
+}
+
+.user_profile_desktop_left_img {
+width: 90%;
+height: 600px;
+}
+
+.user_profile_desktop_left_contacts {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+min-width: 100px;
+height: 50px;
+background-color: white;
+border-radius: 360px;
+position: absolute;
+bottom: 5%;
+
+}
+
+.user_profile_desktop_left_contacts_link {
+
+border-radius: 360px;
+border: 2px solid gainsboro;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+}
+
+.user_profile_desktop_left_contacts_link_chat {
+    border-radius: 360px;
+border: 2px solid gainsboro;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 8px;
+margin-left: 5px;
+margin-right: 5px;
+width: 100px;
+}
+
+
+
+.user_profile_desktop_right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_profile_desktop_right_top {
+display: flex;
+align-items: center;
+border-bottom: 1px solid gainsboro;
+height: 75px;
+width: 100%;
+}
+
+.user_profile_desktop_right_top_name {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 30px;
+}
+
+.user_profile_desktop_right_top_age {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+margin-left: 5px;
+font-size: 30px;
+}
+
+.user_profile_desktop_right_top_bedge {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+margin-left: 5px;
+color: royalblue;
+}
+
+.user_profile_desktop_right_location {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.user_profile_desktop_right_location_card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user_profile_desktop_right_location_card_left {
+display: flex;
+align-items: center;
+height: 100%;
+}
+
+
+
+.user_profile_desktop_right_location_card_left span {
+color: black;
+height: 100%;
+}
+
+.user_profile_desktop_right_location_card_right {
+display: flex;
+align-items: center;
+height: 100%;
+
+}
+
+.user_profile_desktop_right_location_card_right span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+height: 100%;
+font-size: 20px;
+margin-left: 10px;
+}
+
+
+
+.user_profile_desktop_right_biography {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+
+.user_profile_desktop_right_biography_top {
+display: flex;
+align-items: center;
+width: 100%;
+height: 30px;
+
+}
+
+.user_profile_desktop_right_biography_top span {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+}
+
+.user_profile_desktop_right_biography_bottom {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+.user_profile_desktop_right_biography_bottom p {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.user_profile_desktop_right_tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user_profile_desktop_right_tab {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user_profile_desktop_right_tab_images {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.user_profile_desktop_right_tab_img {
+    width: 95%;
+    height: 300px;
+    margin-top: 5px;
+}
+
+.user_profile_desktop_right_tabs_con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    border: 2px solid gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user_profile_desktop_right_tabs_con_card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user_profile_desktop_right_tabs_con_card_left {
+display: flex;
+align-items: center;
+height: 100%;
+}
+
+/*details*/
+.user_profile_desktop_right_tabs_con_details_card_left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: gray;
+    font-weight: bold;
+    }
+
+
+
+.user_profile_desktop_right_tabs_con_card_left span {
+color: black;
+height: 100%;
+}
+
+.user_profile_desktop_right_tabs_con_card_right {
+display: flex;
+align-items: center;
+height: 100%;
+
+}
+
+.user_profile_desktop_right_tabs_con_card_right span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+height: 100%;
+font-size: 20px;
+margin-left: 10px;
+}
+
+
+
+
+@media (max-width:700px) {
+    .user_profile_desktop {
+        display: none;
+    }
+    
+    .user_profile_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    
+.user_profile_desktop_con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top:0px;
+}
+
+.user_profile_desktop_left {
+width: 100%;
+height: 400px;
+display: flex;
+justify-content: center;
+position: relative;
+}
+
+.user_profile_desktop_left_top_nav {
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.user_profile_desktop_left_top_nav_left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    
+    padding-left: 10px;
+}
+
+.user_profile_desktop_left_top_nav_left_icon {
+    border-radius: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+  
+    padding: 10px;
+}
+
+.user_profile_desktop_left_img {
+width: 100%;
+height: 400px;
+}
+
+.user_profile_desktop_left_contacts {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+min-width: 100px;
+height: 50px;
+background-color: white;
+border-radius: 360px;
+position: absolute;
+bottom: 5%;
+
+}
+
+.user_profile_desktop_left_contacts_link {
+
+border-radius: 360px;
+border: 2px solid gainsboro;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+}
+
+.user_profile_desktop_left_contacts_link_chat {
+    border-radius: 360px;
+border: 2px solid gainsboro;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 8px;
+margin-left: 5px;
+margin-right: 5px;
+width: 100px;
+}
+
+
+
+.user_profile_desktop_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_profile_desktop_right_top {
+    padding-left: 10px;
+display: flex;
+align-items: center;
+border-bottom: 1px solid gainsboro;
+height: 75px;
+width: 100%;
+}
+
+.user_profile_desktop_right_top_name {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 30px;
+}
+
+.user_profile_desktop_right_top_age {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+margin-left: 5px;
+font-size: 30px;
+}
+
+.user_profile_desktop_right_top_bedge {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+margin-left: 5px;
+color: royalblue;
+}
+
+.user_profile_desktop_right_location {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.user_profile_desktop_right_location_card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user_profile_desktop_right_location_card_left {
+display: flex;
+align-items: center;
+height: 100%;
+}
+
+
+
+.user_profile_desktop_right_location_card_left span {
+color: black;
+height: 100%;
+}
+
+.user_profile_desktop_right_location_card_right {
+display: flex;
+align-items: center;
+height: 100%;
+
+}
+
+.user_profile_desktop_right_location_card_right span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+height: 100%;
+font-size: 20px;
+margin-left: 10px;
+}
+
+
+
+.user_profile_desktop_right_biography {
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    margin-top: 5px;
+    padding-left: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+
+.user_profile_desktop_right_biography_top {
+display: flex;
+align-items: center;
+width: 100%;
+height: 30px;
+
+}
+
+.user_profile_desktop_right_biography_top span {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+}
+
+.user_profile_desktop_right_biography_bottom {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+.user_profile_desktop_right_biography_bottom p {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.user_profile_desktop_right_tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user_profile_desktop_right_tab {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user_profile_desktop_right_tab_images {
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.user_profile_desktop_right_tab_img {
+    width: 95%;
+    height: 300px;
+    margin-top: 5px;
+    
+}
+
+.user_profile_desktop_right_tabs_con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    border: 2px solid gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user_profile_desktop_right_tabs_con_card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user_profile_desktop_right_tabs_con_card_left {
+display: flex;
+align-items: center;
+height: 100%;
+}
+
+/*details*/
+.user_profile_desktop_right_tabs_con_details_card_left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: gray;
+    font-weight: bold;
+    }
+
+
+
+.user_profile_desktop_right_tabs_con_card_left span {
+color: black;
+height: 100%;
+}
+
+.user_profile_desktop_right_tabs_con_card_right {
+display: flex;
+align-items: center;
+height: 100%;
+
+}
+
+.user_profile_desktop_right_tabs_con_card_right span {
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+height: 100%;
+font-size: 15px;
+margin-left: 10px;
+}
+
+    
+}

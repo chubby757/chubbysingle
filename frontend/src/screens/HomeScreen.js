@@ -73,7 +73,7 @@ function HomeScreen() {
   }, [navigate, userInfo]);
 
   useEffect(() => {
-    if (!userInfo.isPaid) {
+    if (userInfo && !userInfo.isPaid) {
       // Navigate to '/upgrade' if userInfo.upgrade is falsy '
       navigate('/upgrade');
     }

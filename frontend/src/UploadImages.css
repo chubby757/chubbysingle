@@ -3,14 +3,17 @@
     display: flex;
     align-items: center;
   flex-direction: column;
+  background-color: whitesmoke;
 }
 
 .upload_image_page_top {
     display: flex;
     align-items: center;
+    padding-left: 20px;
     height: 75px;
     border-bottom: 1px solid gainsboro;
     width: 100vw;
+    background-color: white;
 }
 
 .upload_image_page_top_logo {
@@ -30,6 +33,7 @@
     flex-direction: column;
     align-items: center;
     border: 1px solid gainsboro;
+    background-color: white;
     border-radius: 5px;
     margin-top: 50px;
 }

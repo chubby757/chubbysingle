@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PaystackButton } from 'react-paystack';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
@@ -8,15 +8,33 @@ import '../PaymentPage.css'
 //icons
 import LockIcon from '@mui/icons-material/Lock';
 import DoneIcon from '@mui/icons-material/Done';
+import {  useNavigate } from 'react-router-dom';
 
 export default function PaymentPage() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
-
-  const publicKey = 'pk_test_dbafcca1913b97098960d18d0b4d3d3d5d36b91c'; // Replace with your Paystack public key
-  const amount = 5000 * 100; // Amount in kobo (e.g., 5000 NGN)
+  const navigate = useNavigate();
+  //const publicKey = 'pk_test_dbafcca1913b97098960d18d0b4d3d3d5d36b91c'; // Replace with your Paystack public key
+  const amount = 180 * 100; // Amount in kobo (e.g., 5000 NGN)
   const email = userInfo.email;
   const currency = 'ZAR'
+
+
+  const [publicKey, setPublicKey] = useState('');
+
+  useEffect(() => {
+    const fetchPublicKey = async () => {
+      try {
+        const { data } = await axios.get('/api/paystack/get-public-key');
+        setPublicKey(data.publicKey);
+      } catch (error) {
+        console.error('Error fetching Paystack key:', error);
+        toast.error('Failed to load payment system.');
+      }
+    };
+
+    fetchPublicKey();
+  }, []);
 
   const onSuccess = async (reference) => {
     console.log('Payment successful:', reference);
@@ -29,10 +47,13 @@ export default function PaymentPage() {
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       toast.success('Payment successful! Your account is now active.');
+      navigate('/createprofile');
     } catch (err) {
       toast.error('Error updating payment status.');
     }
   };
+
+ 
 
   const onClose = () => {
     console.log('Payment dialog closed.');

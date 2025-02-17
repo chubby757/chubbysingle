@@ -30,7 +30,6 @@ import Image2 from './screens/Image2';
 import Image3 from './screens/Image3';
 import Image4 from './screens/Image4';
 import UserProfile from './screens/UserProfile';
-import Payment from './screens/Payment';
 import PaymentPage from './screens/PaymentPage';
 
 
@@ -49,7 +48,7 @@ function App() {
           <Route path="/user/:slug" element={<ProductScreen />} />
           <Route path="/myprofile/:slug" element={<MyProfile />} />
           <Route path="/search" element={<SearchScreen />} />
-          <Route path="/payment" element={<Payment />} />
+          
           <Route path="/upgrade" element={<PaymentPage />} />
           <Route path="/signin" element={<SigninScreen />} />
           <Route path="/female/account" element={<FemaleSignupScreen />} />

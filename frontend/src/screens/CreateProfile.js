@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
@@ -113,7 +113,7 @@ export default function CreateProfile() {
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       toast.success('User updated successfully');
-      navigate('/');
+      navigate('/uploadimage');
     } catch (err) {
       dispatch({
         type: 'FETCH_FAIL',
@@ -123,7 +123,12 @@ export default function CreateProfile() {
   };
 
 
-  
+  useEffect(() => {
+      if (!userInfo.isPaid) {
+        // Navigate to '/upgrade' if userInfo.upgrade is falsy '
+        navigate('/upgrade');
+      }
+    }, [navigate, userInfo]);
 
 
   return (
@@ -146,7 +151,7 @@ export default function CreateProfile() {
            
 
             <Form.Group className="create_profile_page_form_form_input_container" controlId="name">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > Name</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > Name<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -156,7 +161,7 @@ export default function CreateProfile() {
             </Form.Group>
 
             <Form.Group className="create_profile_page_form_form_input_container" controlId="category">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>What are you looking for</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label'>What are you looking for<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
@@ -178,7 +183,7 @@ export default function CreateProfile() {
             </Form.Group>
 
             <Form.Group className="create_profile_page_form_form_input_container" controlId="size">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>Size</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label'>Your Size<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Select
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
@@ -196,7 +201,7 @@ export default function CreateProfile() {
             <>
               {userInfo.gender === 'female' ? (
                 <Form.Group className="create_profile_page_form_form_input_container" controlId="body">
-                  <Form.Label className='create_profile_page_form_form_input_container_label'>Body 1</Form.Label>
+                  <Form.Label className='create_profile_page_form_form_input_container_label'>Your Body<span style={{color: 'red'}} >*</span></Form.Label>
                   <Form.Select
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
@@ -210,7 +215,7 @@ export default function CreateProfile() {
                 </Form.Group>
               ) : (
                 <Form.Group className="create_profile_page_form_form_input_container" controlId="body">
-                  <Form.Label className='create_profile_page_form_form_input_container_label'>Body 2</Form.Label>
+                  <Form.Label className='create_profile_page_form_form_input_container_label'>Your Body<span style={{color: 'red'}} >*</span></Form.Label>
                   <Form.Select
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
@@ -227,8 +232,46 @@ export default function CreateProfile() {
               )}
             </>
 
+            <Form.Group className="create_profile_page_form_form_input_container" controlId="personality">
+              <Form.Label className='create_profile_page_form_form_input_container_label'>Personality<span style={{color: 'red'}} >*</span></Form.Label>
+              <Form.Select
+                value={personality}
+                onChange={(e) => setPersonality(e.target.value)}
+                required
+                className='register_form_center_input'
+              >
+                <option value="">Select personality</option>
+                <option value="introvert">Introvert</option>
+                <option value="extrovert">Extrovert</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="create_profile_page_form_form_input_container" controlId="mindset">
+              <Form.Label className='create_profile_page_form_form_input_container_label'>Mindset<span style={{color: 'red'}} >*</span></Form.Label>
+              <Form.Select
+                value={mindset}
+                onChange={(e) => setMindset(e.target.value)}
+                required
+                className='register_form_center_input'
+              >
+                <option value="">Select mindset</option>
+                <option value="modern">Modern</option>
+                <option value="traditional">Traditional</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="create_profile_page_form_form_input_container" controlId="age">
+              <Form.Label className='create_profile_page_form_form_input_container_label' > Age<span style={{color: 'red'}} >*</span></Form.Label>
+              <Form.Control
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+                className='register_form_center_input'
+              />
+            </Form.Group>
+
             <Form.Group className="create_profile_page_form_form_input_container" controlId="country">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>Country</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label'>Country<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Select
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
@@ -244,47 +287,8 @@ export default function CreateProfile() {
               </Form.Select>
             </Form.Group>
 
-
-            <Form.Group className="create_profile_page_form_form_input_container" controlId="personality">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>Personality</Form.Label>
-              <Form.Select
-                value={personality}
-                onChange={(e) => setPersonality(e.target.value)}
-                required
-                className='register_form_center_input'
-              >
-                <option value="">Select personality</option>
-                <option value="introvert">Introvert</option>
-                <option value="extrovert">Extrovert</option>
-              </Form.Select>
-            </Form.Group>
-
-            <Form.Group className="create_profile_page_form_form_input_container" controlId="mindset">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>Mindset</Form.Label>
-              <Form.Select
-                value={mindset}
-                onChange={(e) => setMindset(e.target.value)}
-                required
-                className='register_form_center_input'
-              >
-                <option value="">Select mindset</option>
-                <option value="modern">Modern</option>
-                <option value="traditional">Traditional</option>
-              </Form.Select>
-            </Form.Group>
-
-            <Form.Group className="create_profile_page_form_form_input_container" controlId="age">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > Age</Form.Label>
-              <Form.Control
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-                required
-                className='register_form_center_input'
-              />
-            </Form.Group>
-
             <Form.Group className="create_profile_page_form_form_input_container" controlId="province">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > province</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > Province/State<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={province}
                 onChange={(e) => setProvince(e.target.value)}
@@ -293,7 +297,7 @@ export default function CreateProfile() {
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="city">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > city</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > city<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
@@ -302,7 +306,7 @@ export default function CreateProfile() {
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="phone">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > phone</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > phone<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -311,7 +315,7 @@ export default function CreateProfile() {
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="whatsapp">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > whatsapp</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > whatsapp<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
@@ -320,7 +324,7 @@ export default function CreateProfile() {
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="instagram">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > instagram</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > instagram Username<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={instagram}
                 onChange={(e) => setInstagram(e.target.value)}
@@ -330,48 +334,52 @@ export default function CreateProfile() {
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="link">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > link</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > link<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={link}
                 onChange={(e) => setLink(e.target.value)}
                 required
-                placeholder='linktree Link'
+                placeholder='Website Link'
                 className='register_form_center_input'
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="high_school">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > high_school</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > High School<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={high_school}
                 onChange={(e) => setHigh_school(e.target.value)}
+                 placeholder='High School'
                 required
                 className='register_form_center_input'
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="primary_school">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > primary_school</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > Primary School<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={primary_school}
                 onChange={(e) => setPrimary_school(e.target.value)}
                 required
+                  placeholder='Primary School'
                 className='register_form_center_input'
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="college">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > college</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > college<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={college}
                 onChange={(e) => setCollege(e.target.value)}
+                  placeholder='College or university'
                 required
                 className='register_form_center_input'
               />
             </Form.Group>
             <Form.Group className="create_profile_page_form_form_input_container" controlId="about_me">
-              <Form.Label className='create_profile_page_form_form_input_container_label' > About Me</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label' > About Me<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 value={about_me}
                 onChange={(e) => setAbout_me(e.target.value)}
                 required
+                  placeholder='Bio'
                 className='register_form_center_input'
               />
             </Form.Group>

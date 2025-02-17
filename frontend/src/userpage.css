@@ -11,7 +11,7 @@
 .seller_page_desktop {
     display: flex;
     width: 100%;
-    flex-direction: column;
+    flex-direction: column; 
 }
 
 .seller_page_desktop_con {
@@ -352,6 +352,7 @@ h5 {
         display: flex;
         width: 100%;
         flex-direction: column;
+        width: 100vw;
     }
 
     .seller_page_desktop_con_right {

@@ -129,11 +129,13 @@
     height: 75px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid gainsboro;
 }
 
 .search_page_desktop_right_top_left {
     display: flex;
     align-items: center;
+    padding-left: 10px;
     width: 50%;
 }
 

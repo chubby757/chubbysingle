@@ -16,7 +16,7 @@ border-radius: 5px;
 }
 
 .payment_page_card_top {
-height: 50px;
+height: 90px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -117,7 +117,7 @@ color: royalblue;
 
 
 .payment_page_card_bottom {
-    height:50px;
+    height:90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,4 +153,23 @@ justify-content: center;
     .payment_page_includes_card_left {
         width: 25%;
     }
+
+    .payment_page_card_bottom {
+        height:90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .payment_page_card_bottom_payment {
+        background-color: royalblue;
+    width: 150px;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
 }

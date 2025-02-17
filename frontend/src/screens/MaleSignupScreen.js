@@ -82,21 +82,21 @@ export default function MaleSignupScreen() {
         </div>
         <div className='register_form_center' >
           <Form.Group className="register_page_form_input_container" controlId="name">
-            <Form.Label className='register_page_form_input_container_label' >Name</Form.Label>
+            <Form.Label className='register_page_form_input_container_label' >Name<span style={{color: 'red'}} >*</span></Form.Label>
             <Form.Control
               className='register_form_center_input' onChange={(e) => setName(e.target.value)} required />
           </Form.Group>
 
           <Form.Group className="register_page_form_input_container" controlId="slug">
-            <Form.Label className='register_page_form_input_container_label' >Username</Form.Label>
+            <Form.Label className='register_page_form_input_container_label' >Username<span style={{color: 'red'}} >*</span></Form.Label>
             <Form.Control
               className='register_form_center_input' onChange={(e) => setSlug(e.target.value)} required />
           </Form.Group>
 
           <Form.Group className="register_page_form_input_container" controlId="email">
-            <Form.Label className='register_page_form_input_container_label' >Email</Form.Label>
+            <Form.Label className='register_page_form_input_container_label' >Email<span style={{color: 'red'}} >*</span></Form.Label>
             <Form.Control
-              className='register_form_center_input'
+              className='register_form_center_input' 
               type="email"
               required
               onChange={(e) => setEmail(e.target.value)}
@@ -104,7 +104,7 @@ export default function MaleSignupScreen() {
           </Form.Group>
 
           <Form.Group className="create_profile_page_form_form_input_container" controlId="gender">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>Gender</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label'>Gender<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
@@ -120,7 +120,7 @@ export default function MaleSignupScreen() {
 
 
             <Form.Group className="create_profile_page_form_form_input_container" controlId="gender_pref">
-              <Form.Label className='create_profile_page_form_form_input_container_label'>Gender Pref</Form.Label>
+              <Form.Label className='create_profile_page_form_form_input_container_label'>Gender Pref<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Select
                 value={gender_pref}
                 onChange={(e) => setGender_pref(e.target.value)}
@@ -135,7 +135,7 @@ export default function MaleSignupScreen() {
             </Form.Group>
 
           <Form.Group className="register_page_form_input_container" controlId="password">
-            <Form.Label className='register_page_form_input_container_label' >Password</Form.Label>
+            <Form.Label className='register_page_form_input_container_label' >Password<span style={{color: 'red'}} >*</span></Form.Label>
             <Form.Control
               className='register_form_center_input'
               type="password"
@@ -143,7 +143,7 @@ export default function MaleSignupScreen() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <Form.Group className="register_page_form_input_container" controlId="confirmPassword">
-              <Form.Label className='register_page_form_input_container_label' >Confirm Password</Form.Label>
+              <Form.Label className='register_page_form_input_container_label' >Confirm Password<span style={{color: 'red'}} >*</span></Form.Label>
               <Form.Control
                 className='register_form_center_input'
                 type="password"

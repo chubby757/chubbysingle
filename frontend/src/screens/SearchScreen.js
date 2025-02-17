@@ -228,6 +228,14 @@ export default function SearchScreen(props) {
     return `${skipPathname ? '' : '/search?'
       }category=${filterCategory}&query=${filterQuery}&size=${filterSize}&body=${filterBody}&province=${filterProvince}&city=${filterCity}&country=${filterCountry}&personality=${filterPersonality}&age=${filterAge}&order=${sortOrder}&page=${filterPage}`;
   };
+
+  useEffect(() => {
+    if (userInfo && !userInfo.category && userInfo.gender === 'female') {
+      // Navigate to '/createprofile' if userInfo.category is falsy and userInfo.gender is 'male'
+      navigate('/createprofile');
+    }
+  }, [navigate, userInfo]);
+
   // This is used only for the example
   const container = window !== undefined ? () => window().document.body : undefined;
   return (
@@ -423,7 +431,7 @@ export default function SearchScreen(props) {
                 <div className='search_page_desktop_right_top' >
                   <div className='search_page_desktop_right_top_left' >
                     <div className='search_page_results' >
-                      {countUsers === 0 ? 'No' : countUsers} Results
+                      {countUsers === 0 ? 'No' : countUsers} Result(s)
                       {query !== 'all' && ' : ' + query}
                       {size !== 'all' && ' : ' + size}
                       {body !== 'all' && ' : ' + body}
@@ -531,7 +539,7 @@ export default function SearchScreen(props) {
               </div>
             </div>
             <div className='search_page_results' >
-              {countUsers === 0 ? 'No' : countUsers} Results
+              {countUsers === 0 ? 'No' : countUsers} Result(s)
               {query !== 'all' && ' : ' + query}
               {size !== 'all' && ' : ' + size}
               {body !== 'all' && ' : ' + body}
@@ -623,7 +631,7 @@ export default function SearchScreen(props) {
                 <Puller />
                 <Typography sx={{ p: 2, color: 'text.secondary' }}>
                   <div className='search_page_results_counter' >
-                    {countUsers === 0 ? 'No' : countUsers} Results
+                    {countUsers === 0 ? 'No' : countUsers} Result(s)
                     {query !== 'all' && ' : ' + query}
                     {size !== 'all' && ' : ' + size}
                     {body !== 'all' && ' : ' + body}

@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
@@ -140,7 +140,12 @@ export default function ProfileScreen() {
     }
   };
 
-
+ useEffect(() => {
+      if (!userInfo.isPaid) {
+        // Navigate to '/upgrade' if userInfo.upgrade is falsy '
+        navigate('/upgrade');
+      }
+    }, [navigate, userInfo]);
 
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });

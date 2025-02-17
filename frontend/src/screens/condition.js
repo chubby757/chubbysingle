@@ -17,7 +17,8 @@ useEffect(() => {
       // Navigate to '/createprofile' if userInfo.category is falsy and userInfo.gender is 'male'
       navigate('/createprofile');
     }
-  }, [navigate, userInfo]);
+  }, [navigate, userInfo]); 
+  
 
 
   const config = {

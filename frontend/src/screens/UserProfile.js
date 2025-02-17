@@ -147,7 +147,7 @@ function UserProfile() {
         <DesktopHeader />
         <div className='user_profile_desktop_con' >
           <div className='user_profile_desktop_left' >
-            <img src={user.banner} alt='' className='user_profile_desktop_left_img' />
+            <img src={user.image} alt='' className='user_profile_desktop_left_img' />
             <div className='user_profile_desktop_left_contacts' >
               <a style={{ textDecoration: 'none' }} href={`https://instagram.com/${user.instagram}`}>
                 <span className='user_profile_desktop_left_contacts_link' >
@@ -442,7 +442,7 @@ function UserProfile() {
               </div>
 
             </div>
-            <img src={user.banner} alt='' className='user_profile_desktop_left_img' />
+            <img src={user.image} alt='' className='user_profile_desktop_left_img' />
             <div className='user_profile_desktop_left_contacts' >
               <a style={{ textDecoration: 'none' }} href={`https://instagram.com/${user.instagram}`}>
                 <span className='user_profile_desktop_left_contacts_link' >

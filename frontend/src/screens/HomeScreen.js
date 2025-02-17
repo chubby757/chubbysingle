@@ -73,6 +73,13 @@ function HomeScreen() {
   }, [navigate, userInfo]);
 
   useEffect(() => {
+    if (!userInfo.isPaid) {
+      // Navigate to '/upgrade' if userInfo.upgrade is falsy '
+      navigate('/upgrade');
+    }
+  }, [navigate, userInfo]);
+
+  useEffect(() => {
     if (userInfo && !userInfo.category && userInfo.gender === 'female') {
       // Navigate to '/createprofile' if userInfo.category is falsy and userInfo.gender is 'male'
       navigate('/createprofile');

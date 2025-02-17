@@ -24,7 +24,7 @@ function User(props) {
       <div className='user_card_details'>
         
           <div className='user_card_details_top'>
-            <span className='user_card_details_name'>{user.name},</span>
+            <span className='user_card_details_name'>@{user.name},</span>
             <span className='user_card_details_age'>{user.age}</span>
            
           </div>

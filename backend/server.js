@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 import seedRouter from "./routes/seedRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import uploadRouter from "./routes/uploadRoutes.js";
-
+import paystackRoutes from './routes/paystackRoutes.js';
 
 dotenv.config();
 
@@ -46,14 +46,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/upload", uploadRouter);
 app.use("/api/seed", seedRouter);
 
+app.use('/api/paystack', paystackRoutes);
 app.use("/api/users", userRouter);
 
 
-//const __dirname = path.resolve();
-//app.use(express.static(path.join(__dirname, "/frontend/build")));
-//app.get("*", (req, res) =>
-  //res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
-//);
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) =>
+ res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
+);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

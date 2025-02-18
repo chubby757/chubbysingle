@@ -1,11 +1,1 @@
-JWT_SECRET=somethingsecret
-MONGODB_URI=mongodb+srv://chubbysingle6:ZXBak0YCOCUKOfjs@chubby.3swar.mongodb.net/chubbysingle?retryWrites=true&w=majority&appName=chubby
-PAYPAL_CLIENT_ID=
-CLOUDINARY_CLOUD_NAME=dangg7ubq
-CLOUDINARY_API_KEY=959318815658725
-CLOUDINARY_URL=cloudinary://959318815658725:k0lNrk4cLV49XEgEUH@dangg7ubq
-CLOUDINARY_API_SECRET=k0lNrk4cLV49XEgEUH-oNZUKAbY
-GOOGLE_API_KEY=
-MAILGUN_DOMIAN=
-MAILGUN_API_KEY=
-PAYSTACK_PUBLIC_KEY="pk_test_dbafcca1913b97098960d18d0b4d3d3d5d36b91c"
+
